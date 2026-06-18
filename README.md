@@ -1,41 +1,11 @@
-# ControleFacil — Dashboard Financeiro
+ControleFacil — Dashboard Financeiro
+Projeto da disciplina de HTML, CSS e Tailwind CSS — FIAP ADS 4ª Fase (2026)
 
-Projeto desenvolvido para a atividade de **Criar as Páginas do Fintech** da FIAP ADS 4ª Fase.
+O ControleFacil é a tela de dashboard do meu projeto Fintech desenvolvido na fase 2. A ideia é mostrar o controle financeiro pessoal do usuário em uma única tela, com resumo de saldo, despesas, receitas e metas.
 
-## Sobre o projeto
+A tela foi feita com HTML5 e CSS3 separados, usando Tailwind CSS para o layout. Os gráficos (rosca e barras) foram feitos só com CSS, sem JavaScript. O layout se adapta para celular com uma navegação inferior.
 
-O **ControleFacil** é um dashboard de gestão financeira pessoal com tema dark, construído com HTML5, CSS3 e Tailwind CSS.
+Para abrir: basta clicar duas vezes no arquivo index.html.
 
-### Funcionalidades da tela
-
-- KPIs de saldo, despesas, receitas e meta de economia
-- Limite de gastos mensal com barra de progresso
-- Próximos pagamentos com data de vencimento
-- Gráfico de rosca por categoria (CSS puro)
-- Tabela de últimas transações
-- Gráfico de barras de evolução mensal (CSS puro)
-- Progresso do orçamento por categoria
-- Responsividade mobile com navegação inferior
-
-## Tecnologias
-
-- HTML5 (tags semânticas)
-- CSS3 (variáveis, gradientes, animações)
-- Tailwind CSS (via CDN)
-
-## Arquivos
-
-| Arquivo | Descrição |
-|---|---|
-| `index.html` | Estrutura e conteúdo da tela |
-| `style.css` | Estilos customizados |
-
-## Como executar
-
-Abra o arquivo `index.html` diretamente no navegador.
-
----
-
-**Aluno:** Arthur Victor Manzini Rohan  
-**RM:** 572488  
-**Curso:** Análise e Desenvolvimento de Sistemas — FIAP 4ª Fase · 2026
+Aluno: Arthur Victor Manzini Rohan
+RM: 572488
