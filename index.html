@@ -287,11 +287,11 @@
           "flex-1 min-h-0" faz a grade se esticar para preencher
           o espaço vertical restante da tela — elimina espaço vazio embaixo.
         -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 flex-1 min-h-0">
+        <!-- "lg:flex-1 lg:min-h-0" = só estica no desktop; no mobile cada card tem altura natural -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:flex-1 lg:min-h-0">
 
           <!-- Gastos por Categoria (gráfico de rosca) -->
-          <!-- "flex flex-col h-full" faz o card usar toda a altura disponível -->
-          <div class="card flex flex-col">
+          <div class="card flex flex-col min-h-[200px] lg:min-h-0">
             <div class="mb-2 flex-shrink-0">
               <h2 class="text-sm font-semibold">Gastos por Categoria</h2>
               <p class="text-xs text-gray-400">Abril 2026</p>
@@ -348,7 +348,7 @@
           </div>
 
           <!-- Últimas Transações -->
-          <div class="card flex flex-col">
+          <div class="card flex flex-col min-h-[240px] lg:min-h-0">
             <div class="flex items-center justify-between mb-2 flex-shrink-0">
               <h2 class="text-sm font-semibold">Últimas Transações</h2>
               <a href="#" class="text-xs text-blue-400 hover:text-blue-300 transition-colors">Ver todas &rsaquo;&rsaquo;</a>
@@ -408,7 +408,7 @@
           </div>
 
           <!-- Progresso do Orçamento -->
-          <div class="card flex flex-col">
+          <div class="card flex flex-col min-h-[200px] lg:min-h-0">
             <div class="mb-2 flex-shrink-0">
               <h2 class="text-sm font-semibold">Progresso do Orçamento</h2>
             </div>
@@ -453,7 +453,7 @@
           </div>
 
           <!-- Evolução Mensal (gráfico de barras) -->
-          <div class="card flex flex-col">
+          <div class="card flex flex-col min-h-[220px] lg:min-h-0">
             <div class="mb-2 flex-shrink-0">
               <h2 class="text-sm font-semibold">Evolução Mensal</h2>
               <p class="text-xs text-gray-400">Despesas vs Receitas</p>
