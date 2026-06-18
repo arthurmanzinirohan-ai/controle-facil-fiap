@@ -1,0 +1,325 @@
+/* ============================================================
+   ControleFacil — Dashboard Styles
+   Complementa as classes utilitárias do Tailwind CSS
+   ============================================================ */
+
+/* ----- Reset & Base ----- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ----- Navegação lateral (sidebar) ----- */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e5e7eb;
+}
+
+.nav-link.active {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+/* ----- Botões de mês ----- */
+.month-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  user-select: none;
+}
+
+.month-btn:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+}
+
+.month-btn.active {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Rótulo pequeno acima do valor nos cards KPI */
+.texto-rotulo {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* ----- Card base ----- */
+.card {
+  background-color: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.875rem;
+  padding: 0.875rem;
+  overflow: hidden;            /* impede qualquer filho de vazar para fora */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/*
+  Variantes de card para os KPIs:
+  Gradiente sutil saindo do canto superior-esquerdo para o centro.
+  Isso cria uma identidade visual sem o clichê da borda lateral colorida.
+*/
+.card-azul {
+  background: linear-gradient(140deg, rgba(59, 130, 246, 0.1) 0%, #161b22 50%);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+.card-azul:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.08);
+}
+
+.card-vermelho {
+  background: linear-gradient(140deg, rgba(239, 68, 68, 0.1) 0%, #161b22 50%);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+.card-vermelho:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 4px 24px rgba(239, 68, 68, 0.08);
+}
+
+.card-verde {
+  background: linear-gradient(140deg, rgba(16, 185, 129, 0.1) 0%, #161b22 50%);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+.card-verde:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 24px rgba(16, 185, 129, 0.08);
+}
+
+.card-laranja {
+  background: linear-gradient(140deg, rgba(245, 158, 11, 0.1) 0%, #161b22 50%);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+.card-laranja:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 4px 24px rgba(245, 158, 11, 0.08);
+}
+
+/*
+  Ícone do KPI: quadrado arredondado com apenas borda colorida.
+  Fica no canto superior-direito (layout justify-between).
+  Mais discreto que um bloco sólido preenchido.
+*/
+.kpi-icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.kpi-icone-azul    { border-color: rgba(96, 165, 250, 0.5);  color: #60a5fa; }
+.kpi-icone-vermelho{ border-color: rgba(248, 113, 113, 0.5); color: #f87171; }
+.kpi-icone-verde   { border-color: rgba(52, 211, 153, 0.5);  color: #34d399; }
+.kpi-icone-laranja { border-color: rgba(251, 191, 36, 0.5);  color: #fbbf24; }
+
+/*
+  Chips de variação (positivo/negativo) abaixo do valor.
+  Pequena pílula colorida com seta + texto.
+*/
+.chip-positivo,
+.chip-negativo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.chip-positivo {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.chip-negativo {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+/* ----- Badge de categoria ----- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.55rem;
+  border-radius: 0.375rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ----- Gráfico de rosca (donut) ----- */
+.donut-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  max-width: 100%;   /* nunca ultrapassa a coluna pai */
+  max-height: 100%;
+  flex-shrink: 0;
+}
+
+.donut-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #3b82f6   0%   32%,   /* Alimentação */
+    #ef4444  32%   52%,   /* Saúde */
+    #f59e0b  52%   67%,   /* Lazer */
+    #14b8a6  67%   76%,   /* Transporte */
+    #8b5cf6  76%  100%    /* Outros */
+  );
+  position: relative;
+}
+
+/* Buraco central do donut */
+.donut-chart::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #161b22;
+}
+
+/* Texto centralizado sobre o buraco */
+.donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  pointer-events: none;
+  line-height: 1.3;
+}
+
+/* ----- Legenda do gráfico ----- */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ----- Barras de progresso do orçamento ----- */
+.progress-track {
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ----- Gráfico de barras (Evolução Mensal) ----- */
+.bar-chart-wrapper {
+  /* container do gráfico de barras */
+}
+
+.chart-axis-label {
+  font-size: 0.65rem;
+  color: #4b5563;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----- Navegação inferior mobile ----- */
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.6rem;
+  color: #6b7280;
+  text-decoration: none;
+  flex: 1;
+  min-width: 0;
+  transition: color 0.15s ease;
+}
+
+.mobile-nav-item:hover {
+  color: #d1d5db;
+}
+
+.mobile-nav-item.active {
+  color: #60a5fa;
+}
+
+/* ----- Responsividade extra ----- */
+@media (max-width: 480px) {
+  .donut-wrapper {
+    width: 110px;
+    height: 110px;
+  }
+
+  .donut-chart::after {
+    width: 64px;
+    height: 64px;
+  }
+}
